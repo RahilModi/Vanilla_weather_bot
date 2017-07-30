@@ -70,7 +70,19 @@ let forecastWeather = (response,data)=>{
     }
 }
 
+let forecast = (response,data)=>{
+  if(response.query.results){
+      let resp = response.query.results.channel;
+      let location = `${resp.location.city}, ${resp.location.country}`;
+      let getForecast = resp.item.forecast
+      return getForecast
+    }else{
+      return "I don't seem to know anything about this place...Sorry :("
+    }
+}
+
 module.exports = {
   CurrentWeather,
-  forecastWeather
+  forecastWeather,
+  forecast
 }
