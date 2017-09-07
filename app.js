@@ -23,7 +23,7 @@ rl.on('line', reply => {
         break;
       case 'Exit':
         console.log("Thanks for using..Have a great day.!!!");
-        rl.prompt();
+        process.exit();
         break;
       case 'CurrentWeather':
         console.log(`Let me check, current weather @ ${data.entities.city}`);
